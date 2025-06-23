@@ -90,3 +90,8 @@ function countPositive(numbers) {
 return result;
 };
 console.log(`11k: ${countPositive([1, -3, 5])}`);
+//11L 
+function minMax(numbers1) {
+
+}
+console.log(minMax([1, -3, 5]))
