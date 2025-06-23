@@ -79,3 +79,14 @@ function addArrays(array4, array5) { //SAME LOOP FOR TWO LOOPS INSIDE THE FUNCTI
 return tempArray;
 }
 console.log(`11j: ${addArrays([1,1,2], [1,1,3])}`);
+//11k
+function countPositive(numbers) {
+    let result = 0;
+    for (let i = 0; i < numbers.length; i++) {
+        if (numbers[i] > 0) {
+            result++ //HOW MANY GREATER THAN 0 IS IN THE NUMBERS ARRAY
+        }
+    }
+return result;
+};
+console.log(`11k: ${countPositive([1, -3, 5])}`);
