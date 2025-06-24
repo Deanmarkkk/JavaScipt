@@ -90,8 +90,42 @@ function countPositive(numbers) {
 return result;
 };
 console.log(`11k: ${countPositive([1, -3, 5])}`);
-//11L 
+//11L, 11M
 function minMax(numbers1) {
-
+const result = {
+    min: null,
+    max: null
+};
+    for (let i = 0; i < numbers1.length; i++) {
+        const getNum = numbers1[i];
+        //Use two if to make sure the condition is correct
+      if (result.min === null || getNum < result.min) {
+        result.min = getNum;
+      };
+      if (result.max === null || getNum > result.max) {
+        result.max = getNum;
+      };
+    };
+return result;
 }
-console.log(minMax([1, -3, 5]))
+console.log(minMax([1, -3, 5]));
+console.log(minMax([-2,3,-5,7,10]));
+console.log(minMax([])); //all done!
+//11n 
+function countWords(words) {
+    // result[getWord] adds/accesses a property using whatever is
+    // saved inside the 'word' variable.
+    const result = {};
+    for (let i = 0; i < words.length; i++) {
+        const getWord = words[i];
+        //mejo di ko gets to
+        if (!result[getWord]) {
+            result[getWord] = 1;
+        }
+        else {
+            result[getWord]++;
+        };
+    };
+return result;
+};
+console.log(countWords(['dean', 'dean', 'mikhail', 'john']));
