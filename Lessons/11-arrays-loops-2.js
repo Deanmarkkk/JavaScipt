@@ -8,9 +8,9 @@ function todoFunc() {
         const getHtml = `
         <div>${getArray.name}</div> 
         <div>${getArray.date}</div>
-        <button 
+        <button class="deleteBtn"
             onclick="myArray.splice(${i}, 1); 
-            todoFunc() //called the function again
+            todoFunc()
             "> Delete
         </button>`;
         html += getHtml;
