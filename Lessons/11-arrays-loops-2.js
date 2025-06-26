@@ -1,28 +1,30 @@
-const myArray = [{name: 'dean', date: '01-09-2025'}];
+const myArray = [{name: 'dean', date: '2025-10-03'}];
+todoFunc()
 function todoFunc() {
     const container = document.querySelector('.container');
     let html = '';
     for (let i = 0; i < myArray.length; i++) {
         const getArray = myArray[i];
-        const getHtml = `<p>${getArray} ${getArray}</p>`;
+        const getHtml = `<p>${getArray.name} ${getArray.date}
+        <button 
+            onclick="myArray.splice(${i}, 1);
+            todoFunc()
+            "> Delete
+        </button>
+        </p>`;
         html += getHtml;
     };
     container.innerHTML = html;
 return html;
 };
 function inputFunc() {
-    const text1 = document.querySelector('.text1');
-    const date1 = document.querySelector('.date1');
+    const text1 = document.querySelector('.text-1');
+    const date1 = document.querySelector('.date-1');
     const getText1 = text1.value;
     const getDate1 = date1.value;
 
-    if (!getText1 || getText1 === null || !getDate1 || getDate1 === null) {
-        alert('Do not enter empty fields')
-    }
-    else {
-        myArray.push(getText1, getDate1)
-        todoFunc();
-        text1.value = '';
-        getDate1.value = '';
-    };
+    myArray.push({name: getText1, date: getDate1})
+    todoFunc();
+    text1.value = '';
+    date1.value = '';
 };
