@@ -4,14 +4,15 @@ function todoFunc() {
     const container = document.querySelector('.container');
     let html = '';
     for (let i = 0; i < myArray.length; i++) {
-        const getArray = myArray[i];
-        const getHtml = `<p>${getArray.name} ${getArray.date}
+        const getArray = myArray[i]; //separate each using div element
+        const getHtml = `
+        <div>${getArray.name}</div> 
+        <div>${getArray.date}</div>
         <button 
-            onclick="myArray.splice(${i}, 1);
-            todoFunc()
+            onclick="myArray.splice(${i}, 1); 
+            todoFunc() //called the function again
             "> Delete
-        </button>
-        </p>`;
+        </button>`;
         html += getHtml;
     };
     container.innerHTML = html;

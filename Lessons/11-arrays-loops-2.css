@@ -1,0 +1,9 @@
+body {
+    background-color: rgb(244, 248, 248);
+    font-family: system-ui;
+}
+.container-style, .main{
+    display: grid;
+    grid-template-columns: 200px 250px 100px;
+    column-gap: 10px;
+}
