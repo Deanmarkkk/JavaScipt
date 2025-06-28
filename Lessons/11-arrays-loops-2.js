@@ -1,5 +1,5 @@
-const myArray = [{name: 'dean', date: '2025-10-03'}];
-todoFunc()
+const myArray = [{name: 'make coffee', date: '2025-10-03'}];
+todoFunc();
 function todoFunc() {
     const container = document.querySelector('.container');
     let html = '';
@@ -15,7 +15,7 @@ function todoFunc() {
         </button>`;
         html += getHtml;
     };
-    container.innerHTML = html;
+    container.innerHTML = html; 
 return html;
 };
 function inputFunc() {
