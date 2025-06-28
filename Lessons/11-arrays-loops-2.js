@@ -24,8 +24,18 @@ function inputFunc() {
     const getText1 = text1.value;
     const getDate1 = date1.value;
 
-    myArray.push({name: getText1, date: getDate1})
-    todoFunc();
+    if (!getText1 || !getDate1) {
+        alert('Please enter the empty field.');
+    } else {
+        myArray.push({name: getText1, date: getDate1})
+        todoFunc(); 
+    };
     text1.value = '';
     date1.value = '';
+};
+//ENTER key function
+function enter(event) {
+    if (event.key === 'Enter') {
+        inputFunc();
+    };
 };

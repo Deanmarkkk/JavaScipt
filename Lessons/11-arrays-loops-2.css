@@ -46,5 +46,9 @@ body {
 }
 .deleteBtn:hover {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, .5);
-    background-color: rgb(227, 12, 12);
+    background-color: #e30c0c;
+}
+/*Add focus*/
+.text-1:focus, .date-1:focus {
+    outline: green;
 }
