@@ -29,9 +29,9 @@ function inputFunc() {
     } else {
         myArray.push({name: getText1, date: getDate1})
         todoFunc(); 
-    };
-    text1.value = '';
-    date1.value = '';
+        text1.value = '';
+         date1.value = '';
+    };  
 };
 //ENTER key function
 function enter(event) {
