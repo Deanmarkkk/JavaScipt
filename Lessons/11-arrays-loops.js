@@ -75,3 +75,66 @@ for (let i = 0; i < myArray.length; i++) {
     myArrayDoubled.push(getValue2 * 2);
 }
 console.log(myArrayDoubled);
+
+//ARRAYS ARE REFERENCES
+const ref = [1,2,3];
+const ref2 = ref.slice(); //if i remove the slice, the ref will show too the string 'array'.
+ref2.push('array');
+console.log(ref);
+console.log(ref2);
+//SHORTCUT; DESTRUCTURING
+const [firstVal, secondVal, thirdVal] = [5,10,15]; //shortcut to not assign var anymore
+console.log(secondVal);
+//BREAK FOR LOOPS
+for (let i = 1; i <= 5; i++) {
+    console.log(`${i}`);
+    if (i === 3) {
+        break; //the loop stops in 3 instead of 5
+    }
+};
+//CONTINUE FOR LOOPS
+
+for (let i = 1; i <= 5; i++) {
+    console.log(`${i}`);
+     if (i === 3) {
+        continue; //the loop will continue 1-5, instead of 3
+    }
+    //break loop
+    if (i === 3) {
+        break; 
+    };
+};
+//DIVISIBLE NUMBER, IF USE CONTINUE ALWAYS USE INCREMENT MANUALLY JUST LIKE THIS
+let i = 1;
+while (i <= 10) {
+    if (i % 2 === 0) { //i, divisible by 2, remainder
+        i++;
+        continue;
+    };
+    console.log(i); //1,3,5,7,9
+    i++;
+};
+//DOUBLE THE VALUE, SHORTCUT
+/*
+const doubled = [1,2,3];
+const doubled2 = [];
+for (let i = 0; i < doubled.length; i++) {
+    const getValue = doubled[i];
+    doubled2.push(getValue * 2);
+};
+console.log(doubled2);
+*/
+//DOUBLE THE VALUE, SHORTCUT, USING FUNCTION AND PARAMETER
+function doubledFunction(doubledVal) {
+    const doubled2 = [];
+    for (let i = 0; i < doubledVal.length; i++) {
+        const getValue = doubledVal[i];
+        if (getValue === 0) {
+            return doubled2; //another way to stop the loop, just like the break
+        }
+        doubled2.push(getValue * 2);     
+    };
+    return doubled2;
+};
+console.log(doubledFunction([5,6,7]));
+console.log(doubledFunction([1,2,0,3]));
