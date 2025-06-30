@@ -164,14 +164,56 @@ for (let i = 0; i < arrayP2.length; i++) {
     };
 };
 console.log(`not found: ${indexP}`)
-//11q wrong, do later
+//11q
 function findIndex(array, word) {
-    word = -1;
     for (let i = 0; i < array.length; i++) {
-        if (array[i] === 'red') {
-            word = 1;
+        if (array[i] === word) {
+            return i;
         }
     }
-return word;
+    return -1;
 };
-console.log(findIndex(['green', 'red', 'blue', 'red']));
+console.log(findIndex(['green', 'red', 'blue', 'red'], 'red'));
+//11r 
+function removeEgg(foods) {
+    let result = [];
+    for (let i = 0; i < foods.length; i++) {
+        if (foods[i] === 'egg') {
+            continue;
+        } else {
+            result.push(foods[i]);
+        }
+    }
+return result;
+}
+console.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'ham']));
+//11s 
+function removeEgg1(foods1) {
+    let result = [];
+    let count = 0;
+    for (let i = 0; i < foods1.length; i++) {
+        if (foods1[i] === 'egg' && count < 2) {
+            count++
+            continue;  
+        } else {
+            result.push(foods1[i]);
+        }
+    }
+return result;
+}
+console.log(removeEgg1(['egg', 'apple', 'egg', 'egg', 'ham']));
+//11t
+function removeEgg2(foods2) {
+    let result = [];
+    let count = 0;
+    for (let i = 0; i < foods2.length; i++) {
+        if (foods2[i] === 'egg' && count < 2) {
+            count++
+            continue;  
+        } else {
+            result.push(foods2[i]);
+        }
+    }
+return result;
+}
+console.log(removeEgg2(['egg', 'apple', 'egg', 'egg', 'ham']));
