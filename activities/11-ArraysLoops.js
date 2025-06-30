@@ -129,3 +129,49 @@ function countWords(words) {
 return result;
 };
 console.log(countWords(['dean', 'dean', 'mikhail', 'john']));
+//11o
+const arrayO = ['hello', 'world', 'search', 'good'];
+let index = -1;
+for (let i = 0; i < arrayO.length; i++) {
+    if (arrayO[i] === 'search') {
+        index = 1; 
+    }
+};
+console.log(`found: ${index}`);
+const arrayO2 = ['not', 'found'];
+index = -1;
+for (let i = 0; i < arrayO2.length; i++) {
+    if (arrayO2[i] === 'search') {
+        index;
+    }
+};
+console.log(`not found: ${index}`)
+//11p
+const arrayP = ['hello', 'world', 'search', 'good', 'search'];
+let indexP = -1;
+for (let i = 0; i < arrayP.length; i++) {
+    if (arrayP[i] === 'search') {
+        indexP = 1;
+        break;
+    };
+};
+console.log(`found: ${indexP}`)
+const arrayP2 = ['not', 'found'];
+indexP = -1;
+for (let i = 0; i < arrayP2.length; i++) {
+    if (arrayP2[i] === 'search') {
+        indexP;
+    };
+};
+console.log(`not found: ${indexP}`)
+//11q wrong, do later
+function findIndex(array, word) {
+    word = -1;
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] === 'red') {
+            word = 1;
+        }
+    }
+return word;
+};
+console.log(findIndex(['green', 'red', 'blue', 'red']));
