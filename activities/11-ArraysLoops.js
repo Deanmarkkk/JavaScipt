@@ -204,16 +204,54 @@ return result;
 console.log(removeEgg1(['egg', 'apple', 'egg', 'egg', 'ham']));
 //11t
 function removeEgg2(foods2) {
+    const reverseFunc = foods2.reverse();
     let result = [];
     let count = 0;
-    for (let i = 0; i < foods2.length; i++) {
-        if (foods2[i] === 'egg' && count < 2) {
-            count++
-            continue;  
+
+    for (let i = 0; i < reverseFunc.length; i++) {
+        const getReversefunc = reverseFunc[i];
+        if (getReversefunc === 'egg' && count < 2) {
+            count++;
+            continue;
         } else {
-            result.push(foods2[i]);
+            result.push(getReversefunc)
         }
     }
-return result;
+    return result.reverse()
 }
 console.log(removeEgg2(['egg', 'apple', 'egg', 'egg', 'ham']));
+//11u
+function removeEgg3(foods3) {
+    const foodsCopy = foods3.slice();
+    const foodsCopyReverse = foodsCopy.reverse();
+    const result = [];
+    let count = 0; 
+    for (let i = 0; i < foodsCopyReverse.length; i++) {
+        const getValue = foodsCopyReverse[i];
+        if (getValue === 'egg' && count < 2) {
+            count++;
+            continue;
+        } else {
+            result.push(getValue);
+        }
+    }
+return result.reverse();
+}
+const foods3 = ['egg', 'apple', 'egg', 'egg', 'ham']
+console.log(removeEgg3(foods3));
+console.log(foods3);
+//11v
+for (let i = 1; i <= 20; i++) {
+   if (i % 3 === 0 && i % 5 === 0) {
+    console.log('FizzBuzz')
+   }
+   else if (i % 3 === 0) {
+    console.log('Fizz')
+   }
+   else if (i % 5 === 0) {
+    console.log('Buzz')
+   }
+   else {
+    console.log(i)
+   }
+}
