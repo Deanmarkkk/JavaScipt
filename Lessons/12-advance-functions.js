@@ -25,6 +25,6 @@ practice1(function run() {console.log('hello there!')})
 setTimeout(function greet(){console.log('hi there!')}, 2000);//1st parameter, how long to display in millisecond
 
 //setInterval() FUNCTION, It keeps running every second
-setInterval(function greet1(){console.log('morning')}, 3000); //same as setTimeout() function
+//const getInterval = setInterval(function greet1(){console.log('morning')}, 5000); //same as setTimeout() function
 //ASYNCHRONOUS CODE
 console.log('time out!') //the setTimeout() function will display next to this line
