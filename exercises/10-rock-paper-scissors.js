@@ -77,7 +77,7 @@ function playGame(playerMove) {
 
     updateScore()
     localStorage.setItem('score', JSON.stringify(score));
-    moveResut.innerHTML = result;
+    moveResut.innerHTML = `${result}!`;
     moves.innerHTML = (`You <img src="/images/${playerMove}-emoji.png" class="images" width="100px"> <img src="/images/${computerMove}-emoji.png" class="images" width="100px"> Computer`);
 };
 
