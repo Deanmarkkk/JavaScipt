@@ -4,6 +4,7 @@ let score = JSON.parse(localStorage.getItem('score')) || {
     tie: 0
 };
 updateScore()
+
 //COMPUTER MOVE
 function computerFunc() {
     let randomNumber = Math.random();
@@ -77,12 +78,14 @@ function playGame(playerMove) {
     updateScore()
     localStorage.setItem('score', JSON.stringify(score));
     moveResut.innerHTML = result;
-    moves.innerHTML = `You <img src="/images/${playerMove}-emoji.png" class="images" width="100px"> <img src="/images/${computerMove}-emoji.png" class="images" width="100px"> Computer`;
+    moves.innerHTML = (`You <img src="/images/${playerMove}-emoji.png" class="images" width="100px"> <img src="/images/${computerMove}-emoji.png" class="images" width="100px"> Computer`);
 };
+
 function updateScore() {
     const scores = document.querySelector('.js-score');
     scores.innerHTML = `wins: ${score.wins} losses: ${score.losses} ties: ${score.tie}`;
 }
+
 function resetScore() {
     score = {
     wins: 0,
