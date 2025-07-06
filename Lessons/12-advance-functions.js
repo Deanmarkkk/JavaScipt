@@ -28,3 +28,13 @@ setTimeout(function greet(){console.log('hi there!')}, 2000);//1st parameter, ho
 //const getInterval = setInterval(function greet1(){console.log('morning')}, 5000); //same as setTimeout() function
 //ASYNCHRONOUS CODE
 console.log('time out!') //the setTimeout() function will display next to this line
+//FOR EACH METHOD
+const arrayForeach = [
+    'dean', 'mikhail', 'john', 'migs'
+];
+arrayForeach.forEach(function (value, i) { //save the 1-last value to the value, the index number
+    if (value === 'dean') {
+        return value;
+    }
+    console.log(value)
+});
