@@ -74,9 +74,6 @@ function myFunc(operator) {
     }
     else if (operator === 'Decrease') {
         messages -= 1;
-        if (messages < 0) {
-            clearInterval(renderFunc)
-        }
 }
 }
 //12i
