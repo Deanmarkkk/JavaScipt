@@ -58,6 +58,7 @@ setInterval(function () {
 }, 1000)
 */
 //12h
+/*
 let messages = 2;
 let renderFunc;
 renderFunc = setInterval(function () {
@@ -76,4 +77,50 @@ function myFunc(operator) {
         messages -= 1;
 }
 }
+*/
 //12i
+let messages = 2;
+let renderFunc;
+let isDisplayingNotif;
+
+
+
+isDisplayingNotif = true;
+renderFunc = setInterval(function () {
+    if (document.title === '12 - Advanced Functions') {
+        document.title = `(${messages}) New Message`;
+    }
+    else {
+        document.title = '12 - Advanced Functions'
+    }
+}, 1000)
+
+DisplayingNotif()
+function DisplayingNotif() {
+    if (isDisplayingNotif) {
+        return;
+    }
+}
+
+function myFunc(operator) {
+    if (operator === 'Add') {
+        messages++;   
+    }
+    else if (operator === 'Decrease') {
+        messages--;
+    }
+
+    if (messages > 0) {
+    DisplayingNotif()
+}
+    if (messages === 0) {
+    stopNotif()
+}
+}
+
+function stopNotif() {
+    isDisplayingNotif = false;
+    clearInterval(renderFunc);
+    document.title = '12 - Advanced Functions';
+}
+//12 I - NOT FINISH
