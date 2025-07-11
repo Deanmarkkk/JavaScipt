@@ -3,6 +3,7 @@ todoFunc();
 function todoFunc() {
     const container = document.querySelector('.container');
     let html = '';
+    /*
     for (let i = 0; i < myArray.length; i++) {
         const getArray = myArray[i]; //separate each using div element
         const getHtml = `
@@ -15,6 +16,18 @@ function todoFunc() {
         </button>`;
         html += getHtml;
     };
+    */
+    myArray.forEach((getArray, i) => { //LESSON 12 - PART 2 CHANGE TO ForEach method 
+        const getHtml = `
+            <div>${getArray.name}</div> 
+            <div>${getArray.date}</div>
+            <button class="deleteBtn"
+                onclick="myArray.splice(${i}, 1); 
+                todoFunc()
+                "> Delete
+            </button>`;
+            html += getHtml;
+    })
     container.innerHTML = html; 
 return html;
 };
@@ -34,8 +47,8 @@ function inputFunc() {
     };  
 };
 //ENTER key function
-function enter(event) {
+const enter = (event) => {
     if (event.key === 'Enter') {
         inputFunc();
-    };
-};
+    }
+}
