@@ -98,9 +98,10 @@ updateScore()
 //AUTO PLAY FUNCTION
 let playing = false;
 let intervalId;
+
 function autoPlay() {
      if (!playing) {
-        intervalId = setInterval(function () {
+        intervalId = setInterval(() => { //LESSON 12 - PART 2 CHANGE TO ARROW FUNCTION
         const randomPlay = computerFunc();
         playGame(randomPlay)
     }, 1000);
