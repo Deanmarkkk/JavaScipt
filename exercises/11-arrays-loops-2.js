@@ -17,20 +17,27 @@ function todoFunc() {
         html += getHtml;
     };
     */
-    myArray.forEach((getArray, i) => { //LESSON 12 - PART 2 CHANGE TO ForEach method 
+    myArray.forEach((getArray) => { //LESSON 12 - PART 2 CHANGE TO ForEach method 
         const getHtml = `
             <div>${getArray.name}</div> 
             <div>${getArray.date}</div>
-            <button class="deleteBtn"
-                onclick="myArray.splice(${i}, 1); 
-                todoFunc()
-                "> Delete
+            <button class="deleteBtn deleteButton">Delete
             </button>`;
             html += getHtml;
     })
     container.innerHTML = html; 
+    //Added a event listener to delete button using loop (forEach)
+    document.querySelectorAll('.deleteButton').forEach((value, index) => {
+        value.addEventListener('click', () => {
+            myArray.splice(value, index);
+            todoFunc();
+        });
+    });
+
+
 return html;
 };
+
 function inputFunc() {
     const text1 = document.querySelector('.text-1');
     const date1 = document.querySelector('.date-1');
@@ -47,8 +54,12 @@ function inputFunc() {
     };  
 };
 //ENTER key function
-const enter = (event) => {
+function enter(event) {
     if (event.key === 'Enter') {
         inputFunc();
-    }
-}
+    };
+};
+const addButton = document.querySelector('.addButton');
+addButton.addEventListener('click', () => {
+    inputFunc()
+});
