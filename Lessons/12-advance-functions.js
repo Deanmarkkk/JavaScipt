@@ -52,7 +52,7 @@ const arrowFunc = (param, param1) => {
     }
 };
 arrowFunc('dean', 'dean');
-//YOU CAN ALSO REMOVE THE BRACKETS IN PARAMETER, ITS WORKS THE SAME
+//YOU CAN ALSO REMOVE THE BRACKETS IN PARAMETER, ITS WORKS THE SAME, BUT ONLY 1 PARAM
 const oneParameter = one => { 
     console.log(one + 5);
 };
@@ -63,3 +63,38 @@ const oneLine = () => 3 + 5;
 setTimeout(function () {
     return console.log(`One line function: ${oneLine()}`)
 }, 1000);
+//FOR EACH METHOD, CHANGE TO ARROW METHOD
+const arrayForeach1 = [
+    'dean', 'mikhail', 'john', 'migs'
+];
+arrayForeach1.forEach((value) => { //save the 1-last value to the value
+    if (value === 'john') {
+        return value;
+    }
+    console.log(value)
+});
+//FUNCTION INSIDE AN OBJECT
+const myObj = { 
+    method: () => { //Method 1
+
+    }, 
+    method1() { //Method 2 - preferred
+        //THIS IS CALLED SHORTHAND METHOD SYNTAX
+        console.log('Method 2 - function inside an object')
+    }
+}
+myObj.method1()
+
+//----------------------------------------------------------------------------------------
+
+//ADD EVENT LISTENER instead of onclick
+
+//FOR BUTTON 1
+const button1 = document.querySelector('.button1');
+const text1 = document.querySelector('.text1');
+
+const buttonFunc = () => {
+    console.log('clicked!')
+};
+button1.addEventListener('click', buttonFunc); //add event listener
+button1.removeEventListener('click', buttonFunc) //remove event listener
