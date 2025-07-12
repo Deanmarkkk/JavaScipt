@@ -81,6 +81,21 @@ function playGame(playerMove) {
     moves.innerHTML = (`You <img src="/images/${playerMove}-emoji.png" class="images" width="100px"> <img src="/images/${computerMove}-emoji.png" class="images" width="100px"> Computer`);
 };
 
+//INSTEAD OF ONCLICK ATTRIBUTE, CHANGED TO ADD EVENT LISTENER
+const rockBtn = document.querySelector('.rock-btn');
+const paperBtn = document.querySelector('.paper-btn');
+const scissorsBtn = document.querySelector('.scissors-btn');
+
+rockBtn.addEventListener('click', () => {
+    playGame('rock')
+});
+paperBtn.addEventListener('click', () => {
+    playGame('paper')
+});
+scissorsBtn.addEventListener('click', () => {
+    playGame('scissors')
+});
+
 function updateScore() {
     const scores = document.querySelector('.js-score');
     scores.innerHTML = `wins: ${score.wins} losses: ${score.losses} ties: ${score.tie}`;
@@ -94,6 +109,11 @@ function resetScore() {
 }
 updateScore()
 };
+//RESET BUTTON
+const resetBtn = document.querySelector('.reset-btn');
+resetBtn.addEventListener('click', () => {
+    resetScore()
+});
 
 //AUTO PLAY FUNCTION
 let playing = false;
@@ -114,3 +134,20 @@ function autoPlay() {
         alert('You stop the game')
     }
 };
+//AUTO PLAY BUTTON
+const autoPlayBtn = document.querySelector('.autoPlay');
+autoPlayBtn.addEventListener('click', () => {
+    autoPlay()
+});
+//EVENT LISTENER FOR KEYBOARDS TO PLAY THE GAME TOO
+document.body.addEventListener('keydown', (event) => {
+    if (event.key === 'r') {
+        playGame('rock')
+    }
+    else if (event.key === 'p') {
+        playGame('paper')
+    }
+    else if (event.key === 's') {
+        playGame('scissors')
+    }
+});
