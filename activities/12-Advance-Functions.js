@@ -124,3 +124,25 @@ function stopNotif() {
     document.title = '12 - Advanced Functions';
 }
 //12 I - NOT FINISH
+//12j
+const multiply = (one, two) => {
+    const result = one * two;
+    return result;
+};
+console.log(multiply(2, 3));
+console.log(multiply(7, 10));
+//12k
+const oneLine = () => 9 * 3;
+console.log(oneLine());
+//12L
+const countPositiveNums = (myArray) => {
+    let result = 0;
+    myArray.forEach((value) => {
+        if (value > 0) {
+            result++;
+        };
+    });
+    return result;
+};
+console.log(countPositiveNums([1, -3, 5, 10, -1]));
+//12m
