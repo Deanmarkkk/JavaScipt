@@ -144,5 +144,44 @@ const countPositiveNums = (myArray) => {
     });
     return result;
 };
-console.log(countPositiveNums([1, -3, 5, 10, -1]));
+console.log(`Positive nums: ${countPositiveNums([1, -3, 5, 10, -1])}`);
 //12m
+const addNum = (array, num) => {
+    return array.map((value) => value += num) //new .map()
+}
+console.log(addNum([1,2,3], 2))
+//12n
+function removeEggs(foods) {
+    return foods.filter((food) => food !== 'egg');
+}
+console.log(removeEggs(['egg', 'apple', 'egg', 'egg', 'ham']));
+function removeName(name) {
+    return name.filter((value) => value !== 'dean'); //new .filter()
+}
+console.log(removeName(['dean', 'dean', 'mark', 'santos', 'mark']));
+//12o
+function removeEggs2(foods) {
+    let count = 0;
+    return foods.filter((value) => {
+        if (value === 'egg' && count < 2) {
+            count++;
+            return false;
+        }
+        return true;    
+    });
+};
+console.log(removeEggs2(['egg', 'apple', 'egg', 'egg', 'ham']));
+//12p
+const adding = () => {
+    console.log(5+5);
+};
+adding()
+//12q
+const btnC = document.querySelector('.lesson12p');
+btnC.addEventListener('click', () => {
+   setTimeout(function() {
+        btnC.innerHTML = 'done!'
+   }, 1000);
+});
+//12r
+//new file Rock Paper Scissors
