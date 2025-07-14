@@ -109,36 +109,53 @@ function resetScore() {
 }
 updateScore()
 };
+const container = document.querySelector('.container');
 //RESET BUTTON
 const resetBtn = document.querySelector('.reset-btn');
-resetBtn.addEventListener('click', () => {
-    resetScore()
+resetBtn.addEventListener('click', () => { //12v
+    //resetScore()
+    container.innerHTML = `<p class="parag">Are you sure you want to reset the score? <button class="yesBtn" onclick="yesNo('yes')">Yes</button><button class="noBtn" onclick="yesNo('no')">No</button></p>`
 });
 
+ function yesNo(choose) { //12x
+        if (choose === 'yes') {
+            resetScore()
+        }
+        else if (choose === 'no') { //12x
+            location.reload(true); //new
+            container.style.display = 'none';
+        };
+    };
+
 //AUTO PLAY FUNCTION
+const autoPlayBtn = document.querySelector('.autoPlay');
+const getAutoPlayBtn = autoPlayBtn.textContent;
+
 let playing = false;
 let intervalId;
-
-function autoPlay() {
-     if (!playing) {
-        intervalId = setInterval(() => { //LESSON 12 - PART 2 CHANGE TO ARROW FUNCTION
-        const randomPlay = computerFunc();
-        playGame(randomPlay)
-    }, 1000);
-    playing = true;
-    alert('The game is automatic')
-    } 
-    else {
+function togglePlay() {
+    if (getAutoPlayBtn === 'Auto Play') {
+        autoPlayBtn.innerHTML = 'Stop' //12t
+        if (!playing) {
+                intervalId = setInterval(() => { //LESSON 12 - PART 2 CHANGE TO ARROW FUNCTION
+                const randomPlay = computerFunc();
+                playGame(randomPlay)
+            }, 1000);
+            playing = true;
+            }
+        else {
+        autoPlayBtn.innerHTML = 'Auto Play' //12t
         clearInterval(intervalId);
         playing = false;
         alert('You stop the game')
+        }
     }
 };
-//AUTO PLAY BUTTON
-const autoPlayBtn = document.querySelector('.autoPlay');
-autoPlayBtn.addEventListener('click', () => {
-    autoPlay()
+
+autoPlayBtn.addEventListener('click',() => {
+    togglePlay();
 });
+
 //EVENT LISTENER FOR KEYBOARDS TO PLAY THE GAME TOO
 document.body.addEventListener('keydown', (event) => {
     if (event.key === 'r') {
@@ -149,5 +166,11 @@ document.body.addEventListener('keydown', (event) => {
     }
     else if (event.key === 's') {
         playGame('scissors')
+    }
+    else if (event.key === 'a') { //12u
+        togglePlay()
+    }
+    else if (event.key === 'Backspace') { //12w
+        resetScore() 
     }
 });
